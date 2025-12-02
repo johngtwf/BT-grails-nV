@@ -15,6 +15,12 @@
 //= require pixel-admin
 //= require prism
 
+require('@aikidosec/firewall'); // <-- Include this before any other code or imports
+
+const express = require('express');
+
+const app = express();
+
 function resetForm() {
     var values = $.parseJSON($.base64.decode($.cookie("user")));
     $("#firstname").val(values['firstname']);
